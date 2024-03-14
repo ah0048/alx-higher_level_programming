@@ -15,4 +15,3 @@ if __name__ == "__main__":
                 print("{:d} argument:".format(args - 1))
                 continue
         print("{:d}: {:s}".format(i, argv[i]))
-        
