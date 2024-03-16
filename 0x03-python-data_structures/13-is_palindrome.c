@@ -11,21 +11,16 @@ int is_palindrome(listint_t **head)
 	slow = *head;
 	fast = *head;
 	first = *head;
-	while (1)
+	while (fast && fast->next)
 	{
 		fast = fast->next->next;
 		slow = slow->next;
-		if (fast == NULL)
-		{
-			second = slow;
-			break;
-		}
-		if (fast->next == NULL)
-		{
-			second = slow->next;
-			break;
-		}
 	}
+	if (fast)
+	{
+		slow = slow->next;
+	}
+	second = slow;
 	reverse_list(&second);
 	while (second)
 	{
