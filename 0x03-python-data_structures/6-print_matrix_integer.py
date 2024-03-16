@@ -4,10 +4,10 @@ def print_matrix_integer(matrix=[[]]):
         return None
     for row in matrix:
         if not row:
-            print("$")
+            print()
         for i in range(len(row)):
             print("{:d}".format(row[i]), end="")
             if i == (len(row) - 1):
-                print("$")
+                print()
             else:
                 print(end=" ")
