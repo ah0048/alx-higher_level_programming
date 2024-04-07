@@ -1,0 +1,28 @@
+The ''5-text_indentation'' Module
+
+Using ''text_indentation''
+
+Import Module:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test 1:
+    >>> text_indentation("Hello.    How are you?     I am fine:   Thanks for asking.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    I am fine:
+    <BLANKLINE>
+    Thanks for asking.
+    <BLANKLINE>
+
+Test 2:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
+
+
