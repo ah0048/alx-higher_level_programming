@@ -1,6 +1,6 @@
-The ''0-add_integer.py'' Module
+The ''0-add_integer'' Module
 
-Using ''0-add_integer.py''
+Using ''add_integer''
 
 Import Module:
     >>> add_integer = __import__('0-add_integer').add_integer
