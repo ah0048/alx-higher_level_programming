@@ -41,5 +41,10 @@ class TestMax(unittest.TestCase):
         max = max_integer([-1, -2, -3, -4])
         self.assertEqual(max, -1)
 
+    def test_7(self):
+        """Unittest for max_integer([..])"""
+        max = max_integer([3])
+        self.assertEqual(max, 3)
+
 if __name__ == "__main__":
     unittest.main()
