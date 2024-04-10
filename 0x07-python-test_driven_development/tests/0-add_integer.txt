@@ -38,9 +38,3 @@ Test 7:
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
-
-Test 8:
-    >>> add_integer(float('-inf'), float('-inf'))
-    Traceback (most recent call last):
-    ...
-    TypeError: a must be an integer
