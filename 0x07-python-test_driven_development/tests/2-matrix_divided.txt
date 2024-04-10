@@ -43,8 +43,14 @@ Test 6:
     ...
     TypeError: div must be a number
 
-Test empty matrix:
+Test 7:
     >>> matrix_divided([[]], 10)
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 8:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
