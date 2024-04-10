@@ -46,3 +46,9 @@ Test 8:
     Traceback (most recent call last):
     ...
     OverflowError: cannot convert float infinity to integer
+
+Test 9:
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
