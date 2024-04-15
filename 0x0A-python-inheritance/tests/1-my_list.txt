@@ -46,7 +46,7 @@ Test 9:
     >>> my_list.print_sorted()
     [-inf, 1, 2, 3, 4, 5]
 
-Test 11:
+Test 10:
     >>> my_list = MyList()
     >>> my_list.print_sorted([1, 4, 0])
     Traceback (most recent call last):
