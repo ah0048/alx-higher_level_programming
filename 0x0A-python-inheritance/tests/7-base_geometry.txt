@@ -48,7 +48,13 @@ Test 8:
     Exception: area() is not implemented
 
 Test 9:
-    >>> bg.integer_validator()
+    >>> bg.integer_validator() # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     ...
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test 10:
+    >>> bg.integer_validator("age", (4,))
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
