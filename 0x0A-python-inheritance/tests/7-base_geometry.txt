@@ -78,3 +78,15 @@ Test 13:
     Traceback (most recent call last):
     ...
     TypeError: age must be an integer
+
+Test 14:
+    >>> bg.integer_validator("age", {4})
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Test 15:
+    >>> bg.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
