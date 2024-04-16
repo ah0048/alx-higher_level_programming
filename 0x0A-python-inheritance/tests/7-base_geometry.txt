@@ -34,3 +34,10 @@ Test 6:
    Traceback (most recent call last):
    ...
    ValueError: numbers must be greater than 0
+
+Test 7:
+   >>> bg.integer_validator("infnumber", int('inf'))
+   Traceback (most recent call last):
+   ...
+   ValueError: invalid literal for int() with base 10: 'inf'
+
