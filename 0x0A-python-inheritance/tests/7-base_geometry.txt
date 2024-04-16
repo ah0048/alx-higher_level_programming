@@ -48,6 +48,7 @@ Test 8:
     Exception: area() is not implemented
 
 Test 9:
+    >>> bg = BaseGeometry()
     >>> bg.integer_validator() # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
     ...
