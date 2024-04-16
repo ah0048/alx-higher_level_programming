@@ -19,8 +19,8 @@ class BaseGeometry:
 class Rectangle(BaseGeometry):
     '''subclass from base geometry'''
     def __init__(self, width, height):
-        super().__init__()
+        '''constructor'''
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-        super().integer_validator("width", self.__width)
-        super().integer_validator("height", self.__height)
