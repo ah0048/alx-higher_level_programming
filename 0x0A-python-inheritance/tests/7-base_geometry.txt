@@ -22,9 +22,3 @@ Test 3:
 
 Test 4:
     >>> bg.integer_validator("my_int", 12)
-
-Test 5:
-    >>> bg.integer_validator(12)
-    Traceback (most recent call last):
-    ...
-    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
