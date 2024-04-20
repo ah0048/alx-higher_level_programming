@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''rectangle module'''
-from base import Base
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -53,7 +53,7 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("x must be integer")
         if value < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -67,5 +67,23 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError("y must be integer")
         if value < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        '''method for area'''
+        return self.width * self.height
+
+    def display(self):
+        '''method for printing rectangle'''
+        print('\n' * self.y, end="")
+        for i in range(self.height):
+            print(" " * self.x, end="")
+            print("#" * self.width)
+
+    def __str__(self):
+        '''print to user method'''
+        return ("[{}] ({}) {}/{} - {}/{}".format(
+            self.__class__.__name__, self.id, self.x, self.y, self.width,
+            self.height
+            ))
