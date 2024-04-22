@@ -5,6 +5,7 @@ from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
 
+
 class TestBase(unittest.TestCase):
     '''test cases'''
 
@@ -35,27 +36,31 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        self.assertEqual(dictionary, {"id": 1, "width": 10, "height": 7, "x": 2, "y": 8})
+        self.assertEqual(dictionary, {"id": 1, "width": 10,
+                                      "height": 7, "x": 2, "y": 8})
         self.assertEqual(type(dictionary), dict)
-        self.assertEqual(json_dictionary, '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        self.assertEqual(json_dictionary, '[{"id": 1, "width": 10, '
+                         '"height": 7, "x": 2, "y": 8}]')
         self.assertEqual(type(json_dictionary), str)
-    
+
     def test_3(self):
         '''test 3'''
         r1 = Rectangle(10, 7, 2, 8)
         r2 = Rectangle(2, 4)
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), 
-                             '[{"id": 1, "width": 10, "height": 7, "x": 2, "y": 8}, '
-                             '{"id": 2, "width": 2, "height": 4, "x": 0, "y": 0}]')
+            self.assertEqual(file.read(),
+                             '[{"id": 1, "width": 10, '
+                             '"height": 7, "x": 2, "y": 8}, '
+                             '{"id": 2, "width": 2, '
+                             '"height": 4, "x": 0, "y": 0}]')
 
     def test_4(self):
         '''test 4'''
         list_input = [
-        {'id': 89, 'width': 10, 'height': 4}, 
-        {'id': 7, 'width': 1, 'height': 7}
-        ]
+                        {'id': 89, 'width': 10, 'height': 4},
+                        {'id': 7, 'width': 1, 'height': 7}
+                    ]
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual("[{}] {}".format(type(list_input), list_input),
