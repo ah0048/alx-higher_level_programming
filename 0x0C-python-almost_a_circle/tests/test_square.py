@@ -30,6 +30,7 @@ class TestRectangle(unittest.TestCase):
         sys.stdout = sys.__stdout__
         display_output = captured_output.getvalue()
         expected_output = "\n\n\n #####\n #####\n #####\n #####\n #####\n"
+        self.assertEqual(display_output, expected_output)
 
     def test_2(self):
         '''test 2'''
