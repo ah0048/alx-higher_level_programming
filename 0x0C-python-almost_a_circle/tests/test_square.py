@@ -38,6 +38,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(s1), "[Square] (1) 0/0 - 5")
         self.assertEqual(s1.size, 5)
         s1.size = 10
+        with self.assertRaises(TypeError):
+            Square("1")
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+        with self.assertRaises(ValueError):
+            Square(1, 2, 3, 4)
+        with self.assertRaises(ValueError):
+            Square(-1)
+        with self.assertRaises(ValueError):
+            Square(1, -2)
+        with self.assertRaises(ValueError):
+            Square(1, 2, -3)
+        with self.assertRaises(ValueError):
+            Square(0)
         self.assertEqual(str(s1), "[Square] (1) 0/0 - 10")
         with self.assertRaises(TypeError):
             s1.size = "9"
