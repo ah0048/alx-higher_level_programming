@@ -57,6 +57,20 @@ class TestRectangle(unittest.TestCase):
         '''test 4'''
         with self.assertRaises(TypeError):
             Square("1")
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+        with self.assertRaises(ValueError):
+            Square(-1)
+        with self.assertRaises(ValueError):
+            Square(1, -2)
+        with self.assertRaises(ValueError):
+            Square(1, 2, -3)
+        with self.assertRaises(ValueError):
+            Square(0)
 
 if __name__ == "__main__":
     unittest.main()
