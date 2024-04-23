@@ -120,6 +120,8 @@ class TestRectangle(unittest.TestCase):
     def test_10(self):
         '''test 10'''
         Rectangle.save_to_file(None)
+        Rectangle.save_to_file([])
+        Rectangle.save_to_file([Rectangle(1, 2)])
 
 if __name__ == "__main__":
     unittest.main()
