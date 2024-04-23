@@ -32,6 +32,8 @@ class TestRectangle(unittest.TestCase):
         '''test 2'''
         with self.assertRaises(TypeError):
             Rectangle(10, "2")
+        with self.assertRaises(TypeError):
+            Rectangle("10", 2)
         with self.assertRaises(ValueError):
             r = Rectangle(10, 2)
             r.width = -10
