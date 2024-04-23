@@ -3,6 +3,7 @@
 import unittest
 import sys
 from io import StringIO
+import os
 from models.base import Base
 from models.square import Square
 
@@ -78,6 +79,23 @@ class TestRectangle(unittest.TestCase):
         Square.save_to_file(None)
         Square.save_to_file([])
         Square.save_to_file([Square(1)])
+
+    def test_save_to_file_with_square_instance(self):
+        # Create a Square instance
+        square_instance = Square(1)
+        
+        # Call Square.save_to_file with the list containing the square instance
+        Square.save_to_file([square_instance])
+
+        # Check if the file is created
+        filename = "Square.json"
+        self.assertTrue(os.path.exists(filename))
+
+        # Read the contents of the file and verify its content
+        with open(filename, "r") as file:
+            file_contents = file.read()
+            self.assertEqual(file_contents, '[{"id": 1, "size": 1, "x": 0, "y": 0}]')
+
 
 if __name__ == "__main__":
     unittest.main()
