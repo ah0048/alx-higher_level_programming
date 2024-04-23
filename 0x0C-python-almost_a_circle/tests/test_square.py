@@ -71,6 +71,8 @@ class TestRectangle(unittest.TestCase):
             Square(1, 2, -3)
         with self.assertRaises(ValueError):
             Square(0)
+        s1 = Square(1, 2, 3, 4)
+        self.assertEqual(str(s1), "[Square] (4) 2/3 - 1")
 
 if __name__ == "__main__":
     unittest.main()
