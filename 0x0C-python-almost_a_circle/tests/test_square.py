@@ -53,5 +53,10 @@ class TestRectangle(unittest.TestCase):
         s1.update(size=7, id=89, y=1)
         self.assertEqual(str(s1), "[Square] (89) 3/1 - 7")
 
+    def test_4(self):
+        '''test 4'''
+        with self.assertRaises(TypeError):
+            Square("1")
+
 if __name__ == "__main__":
     unittest.main()
