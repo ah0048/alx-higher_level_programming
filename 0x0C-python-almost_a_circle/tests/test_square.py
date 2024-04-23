@@ -74,5 +74,10 @@ class TestRectangle(unittest.TestCase):
         s1 = Square(1, 2, 3, 4)
         self.assertEqual(str(s1), "[Square] (4) 2/3 - 1")
 
+    def test_5(self):
+        Square.save_to_file(None)
+        Square.save_to_file([])
+        Square.save_to_file([Square(1)])
+
 if __name__ == "__main__":
     unittest.main()
