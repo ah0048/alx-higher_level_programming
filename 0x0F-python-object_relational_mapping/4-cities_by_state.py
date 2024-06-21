@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+'''module to get all cities'''
 import MySQLdb
 from sys import argv
-'''module to get all cities'''
 
 
 if __name__ == '__main__':

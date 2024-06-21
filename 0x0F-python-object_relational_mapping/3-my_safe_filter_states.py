@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+'''module to get all states'''
 import MySQLdb
 from sys import argv
-'''module to get all states'''
 
 
 if __name__ == '__main__':
