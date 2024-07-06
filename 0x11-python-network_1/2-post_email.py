@@ -11,6 +11,6 @@ if __name__ == "__main__":
     data = {'email': email}
     encoded_data = parse.urlencode(data).encode('ascii')
     req = request.Request(url, data=encoded_data, method="POST")
-    with request.urlopen(url) as resp:
+    with request.urlopen(req) as resp:
         body = resp.read().decode('utf-8')
         print(body)
