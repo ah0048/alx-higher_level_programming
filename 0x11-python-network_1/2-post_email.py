@@ -9,8 +9,8 @@ if __name__ == "__main__":
     url = argv[1]
     email = argv[2]
     data = {'email': email}
-    encoded_data = parse.urlencode(data)
-    req = request.Request(url, encoded_data)
+    encoded_data = parse.urlencode(data).encode('ascii')
+    req = request.Request(url, data=encoded_data)
     with request.urlopen(url) as resp:
-        body = resp.read().encode('utf-8')
+        body = resp.read().decode('utf-8')
         print(body)
