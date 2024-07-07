@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+'''list 10 commits'''
+import requests
+from sys import argv
+
+
+if __name__ == "__main__":
+    user = argv[1]
+    repo = argv[2]
+    url = f"https://api.github.com/repos/{user}/{repo}/commits"
+    resp = requests.get(url)
+    json_data = resp.json()
+    for i in range(0, 10):
+        print("{}: {}".format(json_data[i]['sha'],
+                              json_data[i]['commit']['author']['name']))
