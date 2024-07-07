@@ -11,7 +11,7 @@ if __name__ == "__main__":
     else:
         q = ""
     data = {'q': q}
-    resp = requests.post(url, data=q)
+    resp = requests.post(url, data=data)
 
     try:
         json_data = resp.json()
