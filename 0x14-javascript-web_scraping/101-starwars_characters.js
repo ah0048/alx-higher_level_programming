@@ -5,15 +5,20 @@ request.get(url, (err, resp, body) => {
   if (err) {
     console.error(err);
   } else {
-    const film = JSON.parse(body);
-    film.characters.forEach(character => {
-      request.get(character, (err, resp, body) => {
-        if (err) {
-          console.error(err);
-        }
-        const CharacterInfo = JSON.parse(body);
-        console.log(CharacterInfo.name);
-      });
-    });
+    const characters = JSON.parse(body).characters;
+    PrintAllCharacters(characters, 0);
   }
 });
+
+function PrintAllCharacters (characters, index) {
+  request.get(characters[index], (err, resp, body) => {
+    if (err) {
+      console.error(err);
+    }
+    const CharacterInfo = JSON.parse(body);
+    console.log(CharacterInfo.name);
+    if (index + 1 < characters.length) {
+      PrintAllCharacters(characters, index + 1);
+    }
+  });
+}
